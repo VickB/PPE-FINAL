@@ -51,6 +51,7 @@ public class peupleur {
 		magasin.ajoutAction(magedit);
 		magasin.ajoutAction(magsuppr);
 		
+		
 		particulier.ajoutAction(partiajout);
 		particulier.ajoutAction(partiedit);
 		
