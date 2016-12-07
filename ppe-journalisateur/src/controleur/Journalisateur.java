@@ -26,7 +26,7 @@ public class Journalisateur {
 	public void initialisation() {
 		try {
 				consommer();
-		} catch (Exception e) {	e.printStackTrace(); }
+		} catch (Exception e)  {	e.printStackTrace(); }
 	}
 	
 	public void consommer() throws IOException, TimeoutException {
