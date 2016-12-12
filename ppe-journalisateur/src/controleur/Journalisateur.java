@@ -45,6 +45,7 @@ public class Journalisateur {
 	      channel.basicConsume(QUEUE_NAME, true, consumer);
 	}
 	
+	@SuppressWarnings("unused")
 	private void journaliser() {
 		// todo : accès mongodb et persistance d'une instance de Journal
 	}
