@@ -48,26 +48,26 @@ public class ServiceREST {
 		boolean statut = false;
 		EntityManager em = null;
 		try {
-				em = FournisseurDePersistance.getInstance().fournir();
-				em.getTransaction().begin();
-				Query requete = em.createNativeQuery("SELECT * FROM UTILISATEUR WHERE EMAIL=?", Utilisateur.class);
-				requete.setParameter(1, email);
-				Utilisateur utilisateur = (Utilisateur) requete.getSingleResult();
+			em = FournisseurDePersistance.getInstance().fournir();
+			em.getTransaction().begin();
+			Query requete = em.createNativeQuery("SELECT * FROM UTILISATEUR WHERE EMAIL = ?", Utilisateur.class);
+			requete.setParameter(1, email);
+			Utilisateur utilisateur = (Utilisateur) requete.getSingleResult();
+		
+			if(!utilisateur.getPassword().equals(password)) {
+				messageJournal = email + "|mauvais password|" + new Date();
+			}
+			else {
+					nomprenom = utilisateur.getNom() + " " + utilisateur.getPrenom()+", ";
+					role=utilisateur.getRole().getRole();
+					messageJournal = email + "|" + nomprenom + "|succes|" + new Date();
+					statut = true;
+			}
 			
-				if(!utilisateur.getPassword().equals(password)) {
-					messageJournal = email + " mauvais password";
-				}
-				else {
-						nomprenom = utilisateur.getNom() + " " + utilisateur.getPrenom();
-						messageJournal = email + " accès " + new Date();
-						role = utilisateur.getRole().getRole();
-						statut = true;
-				}
-				
 
-		} catch (Exception e) {
-			messageJournal = email + " utilisateur inconnu";
-		}
+	} catch (Exception e) {
+		messageJournal = email + "||utilisateur inconnu|" + new Date();
+	}
 		finally {
 			em.getTransaction().commit();
 			em.close();
@@ -89,5 +89,6 @@ public class ServiceREST {
 	    System.out.println(" [x] Envoyé '" + messageJournal + "'");
 	    channel.close();
 	    connexion.close();
+	    
 	} 
 }

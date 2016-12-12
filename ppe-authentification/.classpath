@@ -8,24 +8,24 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JPAREST">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/derby">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/opt/logiciels/librairies/rabbitmq/amqp-client-4.0.0.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jaxrs-ri2">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/opt/logiciels/librairies/rabbitmq/slf4j-api-1.6.99.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jpa">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/opt/logiciels/librairies/rabbitmq/slf4j-simple-1.6.99.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/rabbitmq">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>

@@ -12,7 +12,6 @@ import modele.*;
 public class peupleur {
 
 	public static void main(String[] args) {
-		
 		EntityManagerFactory emf= Persistence.createEntityManagerFactory("jdbc");
 		EntityManager em= emf.createEntityManager();
 		em.getTransaction().begin();
