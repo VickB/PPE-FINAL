@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<utilisateurs>
+     <utilisateur ID="1">
+          <prenom>Jacques</prenom>
+          <nom>Lebron</nom>
+          <email>j.lebron@free.fr</email>
+          <password>llbr</password>
+     </utilisateur>
+     <utilisateur ID="2">
+          <prenom>Anthony</prenom>
+          <nom>Martin</nom>
+          <email>martin.anthony@gmail.com</email>
+          <password>manth</password>
+     </utilisateur>
+     <utilisateur ID="3">
+          <prenom>Paul</prenom>
+          <nom>Dupont</nom>
+          <email>dupont.p@hotmail.fr</email>
+          <password>dup</password>
+     </utilisateur>
+     <utilisateur ID="4">
+          <prenom>Pierre</prenom>
+          <nom>Durand</nom>
+          <email>pierre.durand@orange.fr</email>
+          <password>dudu</password>
+     </utilisateur>
+</utilisateurs>
