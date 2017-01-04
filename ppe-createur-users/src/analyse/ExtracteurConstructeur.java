@@ -31,7 +31,7 @@ public class ExtracteurConstructeur extends DefaultHandler {
                       // Create a new Employee.
                       case "utilisateur": {
                            empl = new Utilisateur();
-                           // empl.setIdutilisateur(Integer.valueOf(attributes.getValue("ID")));
+                            empl.setIdutilisateur(Integer.valueOf(attributes.getValue("ID")));
                            break;
                       }
                  }

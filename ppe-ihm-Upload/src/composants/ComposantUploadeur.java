@@ -1,7 +1,7 @@
 package composants;
 
 
-import java.io.File;
+//import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -33,8 +33,8 @@ public class ComposantUploadeur {
 		if(file == null)
 			return "index.xhtml";
 		try {
-				//fileContent = new Scanner(file.getInputStream()).useDelimiter("\\A").next();
-				//System.out.println(fileContent);
+//				fileContent = new Scanner(file.getInputStream()).useDelimiter("\\A").next();
+//				System.out.println(fileContent);
 				file.write("/tmp/" + file.getSubmittedFileName());
 				byte[] flux = Files.readAllBytes(Paths.get("/tmp/"+file.getSubmittedFileName()));
 				boolean statut = transfert(new String(flux, Charset.defaultCharset()));
@@ -50,7 +50,7 @@ public class ComposantUploadeur {
 	
 	private boolean transfert(String xml) {
 		Client client = ClientBuilder.newClient();
-		WebTarget cible = client.target(UriBuilder.fromPath("http://tomcatcreateurutilisateur:8080/ppe-creation-utilisateurs-serveur"));
+		WebTarget cible = client.target(UriBuilder.fromPath("http://tomcatcreateurutilisateur:8080/ppe-createur-users"));
 		WebTarget ciblefinale = cible.path("xml");
 		ciblefinale.request(MediaType.TEXT_PLAIN_TYPE).post(Entity.entity(xml, MediaType.TEXT_PLAIN));
 		return true;

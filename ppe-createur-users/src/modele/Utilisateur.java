@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,9 +33,9 @@ public class Utilisateur {
 	private Date derniere_mise_a_jour;
 	@Column(nullable = false)
 	private String modifie_par;
-	// @ManyToOne
-	// @JoinColumn(name = "ROLE_FK")
-	// private Role role;
+//	 @ManyToOne
+//	 @JoinColumn(name = "ROLE_FK")
+//	 private Role role;
 
 	public Utilisateur() {
 		super();
@@ -115,13 +115,13 @@ public class Utilisateur {
 	
 	
 	
-	/*
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-	*/
+	
+//	public Role getRole() {
+//		return role;
+//	}
+//
+//	public void setRole(Role role) {
+//		this.role = role;
+//	}
+	
 }
