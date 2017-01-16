@@ -28,10 +28,10 @@ public class ExtracteurConstructeur extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     
     	switch (qName) {
-                      // Create a new Employee.
+//                       Create a new Employee.
                       case "utilisateur": {
                            empl = new Utilisateur();
-                            empl.setIdutilisateur(Integer.valueOf(attributes.getValue("ID")));
+//                            empl.setIdutilisateur(Integer.valueOf(attributes.getValue("ID")));
                            break;
                       }
                  }

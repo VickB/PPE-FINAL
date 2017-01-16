@@ -21,7 +21,7 @@ public class Extracteur extends DefaultHandler {
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
 		sortie = false;
-		 System.out.println("Entrée dans l'élément: "+qName);
+//		 System.out.println("Entrée dans l'élément: "+qName);
 		if(qName.equals("employee")) {
 			System.out.println("=======================================================");
 			System.out.println("ID: " + atts.getValue("ID"));
@@ -31,7 +31,7 @@ public class Extracteur extends DefaultHandler {
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		sortie = true;
-		 System.out.println("Sortie de l'élément: "+qName);
+//		 System.out.println("Sortie de l'élément: "+qName);
 	}
 
 	@Override
