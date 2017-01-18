@@ -1,7 +1,7 @@
-package composants;
+package composantsJSF;
 
 
-//import java.io.File;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -15,33 +15,33 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
 @ManagedBean(name="bean")
 @RequestScoped
-public class ComposantUploadeur {
+public class ComposantUploadeurGUI {
 
 	private String fileContent;
 	private Part file;
 	private String resultat = " ";
 
-	public ComposantUploadeur() {
+	public ComposantUploadeurGUI() {
 		super();
 	}
 	
 	public String upload() {
 		if(file == null)
 			return "index.xhtml";
-		try {
-//				fileContent = new Scanner(file.getInputStream()).useDelimiter("\\A").next();
-//				System.out.println(fileContent);
+		try {				
 				file.write("/tmp/" + file.getSubmittedFileName());
+				System.out.println(file.getSubmittedFileName());
 				byte[] flux = Files.readAllBytes(Paths.get("/tmp/"+file.getSubmittedFileName()));
 				boolean statut = transfert(new String(flux, Charset.defaultCharset()));
-				if (statut) resultat = "Le chargement a réussi";
-				else resultat = "échec du chargement";
-//				File lefichier = new File("/tmp/"+file.getSubmittedFileName());
-//				lefichier.delete();
+				if (statut) resultat = "La création des nouveaux utilisateurs est confirmée";
+				else resultat = "échec de l'opération";
+				File lefichier = new File("/tmp/"+file.getSubmittedFileName());
+				//lefichier.delete();
 		} catch (IOException e) { e.printStackTrace();
 			resultat = "échec du chargement";
 		}
@@ -50,10 +50,11 @@ public class ComposantUploadeur {
 	
 	private boolean transfert(String xml) {
 		Client client = ClientBuilder.newClient();
-		WebTarget cible = client.target(UriBuilder.fromPath("http://tomcatcreateurutilisateur:8080/ppe-createur-users"));
+		WebTarget cible = client.target(UriBuilder.fromPath("http://tomcatcreateurutilisateur:8080/creation-utilisateurs-service"));
 		WebTarget ciblefinale = cible.path("xml");
-		ciblefinale.request(MediaType.TEXT_PLAIN_TYPE).post(Entity.entity(xml, MediaType.TEXT_PLAIN));
-		return true;
+		Response reponse = ciblefinale.request(MediaType.TEXT_PLAIN_TYPE).post(Entity.entity(xml, MediaType.TEXT_PLAIN));
+		if(reponse.getStatus() == 200) return true;
+		return false;
 	}
 
 	public String getFileContent() {
