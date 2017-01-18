@@ -25,7 +25,7 @@ public class AuthentificationGUI {
 	
 	public void controler() {
 		Client client = ClientBuilder.newClient();
-		WebTarget cible = client.target(UriBuilder.fromPath("http://tomcatauthentificateur:8080/authentificateur"));
+		WebTarget cible = client.target(UriBuilder.fromPath("http://tomcatauthentificateur:8080/ppe-authentification"));
 		WebTarget ciblefinale = cible.path("dto");
 		MessageDTO dto = ciblefinale.queryParam("email", email).queryParam("password", password)
 				.request(MediaType.APPLICATION_XML).get(MessageDTO.class);
