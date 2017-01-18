@@ -37,7 +37,7 @@ public class Action {
 		super();
 	}
 
-	public Action(String action, Date derniere_mise_a_jour, String description, String modifie_par) {
+	public Action(String action, String description, Date derniere_mise_a_jour, String modifie_par) {
 		super();
 		this.action = action;
 		this.description = description;

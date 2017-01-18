@@ -50,7 +50,7 @@ public class Role {
 		super();
 	}
 
-	public Role(String role, Date derniere_mise_a_jour, String description, String modifie_par) {
+	public Role(String role, String description, Date derniere_mise_a_jour, String modifie_par) {
 		super();
 		this.role = role;
 		this.description = description;
